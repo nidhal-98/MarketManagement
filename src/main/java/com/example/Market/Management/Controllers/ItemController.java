@@ -7,6 +7,7 @@ import com.example.Market.Management.Services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,5 +23,10 @@ public class ItemController {
     public List<Item> getAllItems() {
 
         return itemService.getAllItems();
+    }
+
+    @RequestMapping(value = "getById", method = RequestMethod.GET)
+    public Item getMarketById(@RequestParam Integer id) {
+        return itemService.getMarketById(id);
     }
 }

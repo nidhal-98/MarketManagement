@@ -17,4 +17,8 @@ public class ItemService {
 
         return itemRepository.findAll();
     }
+
+    public Item getMarketById(Integer id) {
+        return itemRepository.findById(id).get();
+    }
 }
