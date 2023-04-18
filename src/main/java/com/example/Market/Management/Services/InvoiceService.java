@@ -18,4 +18,8 @@ public class InvoiceService {
         return invoiceRepository.findAll();
     }
 
+    public Invoice getMarketById(Integer id) {
+        return invoiceRepository.findById(id).get();
+    }
+
 }
