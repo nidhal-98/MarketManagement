@@ -1,6 +1,7 @@
 package com.example.Market.Management.Services;
 
 import com.example.Market.Management.Models.Customer;
+import com.example.Market.Management.Models.Market;
 import com.example.Market.Management.Respositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,10 @@ public class CustomerService {
 
     public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
+    }
+
+    public Customer getMarketById(Integer id) {
+        return customerRepository.findById(id).get();
     }
 
 }
